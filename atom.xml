@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-04-15T02:55:55.000Z</updated>
+  <updated>2016-05-30T12:39:27.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,67 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>source/_posts/apk反编译.md</title>
+    <link href="http://yoursite.com/2016/05/30/source-posts-apk%E5%8F%8D%E7%BC%96%E8%AF%91-md/"/>
+    <id>http://yoursite.com/2016/05/30/source-posts-apk反编译-md/</id>
+    <published>2016-05-30T12:39:27.000Z</published>
+    <updated>2016-05-30T12:39:27.000Z</updated>
+    
+    <content type="html"></content>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/2016/05/30/apk%E5%8F%8D%E7%BC%96%E8%AF%91/"/>
+    <id>http://yoursite.com/2016/05/30/apk反编译/</id>
+    <published>2016-05-30T12:38:26.000Z</published>
+    <updated>2016-05-30T12:38:26.000Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;apk反编译&quot;&gt;&lt;a href=&quot;#apk反编译&quot; class=&quot;headerlink&quot; title=&quot;apk反编译&quot;&gt;&lt;/a&gt;apk反编译&lt;/h1&gt;&lt;p&gt;标签（空格分隔）： Android&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;###工具&lt;br&gt;&lt;a href=&quot;http://ibotpeaches.github.io/Apktool/install/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;apktool&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://bitbucket.org/pxb1988/dex2jar/downloads&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;dex2jar&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://jd.benow.ca/#jd-gui-download&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;jdgui&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;###apktool（Get XML files from APK）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Mac OS X:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;Download Mac &lt;a href=&quot;https://raw.githubusercontent.com/iBotPeaches/Apktool/master/scripts/osx/apktool&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;wrapper script&lt;/a&gt; (下载脚本，并保存，文件名为apktool.sh)&lt;/li&gt;
+&lt;li&gt;Download apktool-2 &lt;a href=&quot;https://bitbucket.org/iBotPeaches/apktool/downloads&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;(find newest here)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Rename downloaded jar to apktool.jar(下载的jar包重命名apktool.jar)&lt;/li&gt;
+&lt;li&gt;Move both files (apktool.jar &amp;amp; apktool) to /usr/local/bin (root needed)(移动apktool.jar和apktool.sh到/usr/local/bin方便全局使用，我采用alias配置一下&lt;code&gt;alias apktool=apktool.sh的绝对路径&lt;/code&gt;，当前terminal可用)&lt;/li&gt;
+&lt;li&gt;Make sure both files are executable (chmod +x)(对apktool.sh添加可执行的权限&lt;code&gt;chmod +x apktool.sh&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Try running apktool via cli(运行apktool ok)&lt;/li&gt;
+&lt;li&gt;apktool d &lt;code&gt;apkname.apk&lt;/code&gt;(得到反编译的xml文件)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;dex2jar-Get-Java-files-from-APK&quot;&gt;&lt;a href=&quot;#dex2jar-Get-Java-files-from-APK&quot; class=&quot;headerlink&quot; title=&quot;dex2jar(Get Java files from APK)&quot;&gt;&lt;/a&gt;dex2jar(Get Java files from APK)&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Rename the .apk file into .zip file (example SharedPr.apk into SharedPr.zip)(重命名后缀名.apk改为.zip).&lt;/li&gt;
+&lt;li&gt;Extract SharedPr.zip file and copy classes.dex file from extracted folder.(解压改名后的zip文件，复制classes.dex)&lt;/li&gt;
+&lt;li&gt;Extract dex2jar.zip and paste classes.dex into dex2jar folder. (把复制的classes.dex文件paste 到dex2jar文件夹下)&lt;/li&gt;
+&lt;li&gt;Open command prompt and change directory to the dex2jar folder. Then write dex2jar classes.dex and press enter. Now you will get classes-dex2jar.jar file in the same folder.(打开terminal，移动到dex2jar文件夹下，执行&lt;code&gt;dex2jar classes.dex&lt;/code&gt;，回车，得到classes-dex2jar.jar文件)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;jdgui-打开dex2jar得到的jar文件&quot;&gt;&lt;a href=&quot;#jdgui-打开dex2jar得到的jar文件&quot; class=&quot;headerlink&quot; title=&quot;jdgui(打开dex2jar得到的jar文件)&quot;&gt;&lt;/a&gt;jdgui(打开dex2jar得到的jar文件)&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Now double click on jd-gui(Java decompiler) and click on open file. Then open classes-dex2jar.jar file from that folder(打开jdguid软件，打开文件选中classes-dex2jar.jar,可以看到java .class文件了)&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;apk反编译&quot;&gt;&lt;a href=&quot;#apk反编译&quot; class=&quot;headerlink&quot; title=&quot;apk反编译&quot;&gt;&lt;/a&gt;apk反编译&lt;/h1&gt;&lt;p&gt;标签（空格分隔）： Android&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;###工具&lt;br&gt;&lt;a href=&quot;http:/
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>markdown</title>

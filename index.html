@@ -261,6 +261,217 @@
             
               
                 
+                <a class="post-title-link" href="/2016/05/30/source-posts-apk反编译-md/" itemprop="url">
+                  source/_posts/apk反编译.md
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-30T20:39:27+08:00" content="2016-05-30">
+              2016-05-30
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/30/apk反编译/" itemprop="url">
+                  未命名
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-30T20:38:26+08:00" content="2016-05-30">
+              2016-05-30
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="apk反编译"><a href="#apk反编译" class="headerlink" title="apk反编译"></a>apk反编译</h1><p>标签（空格分隔）： Android</p>
+<hr>
+<p>###工具<br><a href="http://ibotpeaches.github.io/Apktool/install/" target="_blank" rel="external">apktool</a><br><a href="https://bitbucket.org/pxb1988/dex2jar/downloads" target="_blank" rel="external">dex2jar</a><br><a href="http://jd.benow.ca/#jd-gui-download" target="_blank" rel="external">jdgui</a></p>
+<p>###apktool（Get XML files from APK）</p>
+<ul>
+<li>Mac OS X:</li>
+</ul>
+<ol>
+<li>Download Mac <a href="https://raw.githubusercontent.com/iBotPeaches/Apktool/master/scripts/osx/apktool" target="_blank" rel="external">wrapper script</a> (下载脚本，并保存，文件名为apktool.sh)</li>
+<li>Download apktool-2 <a href="https://bitbucket.org/iBotPeaches/apktool/downloads" target="_blank" rel="external">(find newest here)</a></li>
+<li>Rename downloaded jar to apktool.jar(下载的jar包重命名apktool.jar)</li>
+<li>Move both files (apktool.jar &amp; apktool) to /usr/local/bin (root needed)(移动apktool.jar和apktool.sh到/usr/local/bin方便全局使用，我采用alias配置一下<code>alias apktool=apktool.sh的绝对路径</code>，当前terminal可用)</li>
+<li>Make sure both files are executable (chmod +x)(对apktool.sh添加可执行的权限<code>chmod +x apktool.sh</code>)</li>
+<li>Try running apktool via cli(运行apktool ok)</li>
+<li>apktool d <code>apkname.apk</code>(得到反编译的xml文件)</li>
+</ol>
+<h3 id="dex2jar-Get-Java-files-from-APK"><a href="#dex2jar-Get-Java-files-from-APK" class="headerlink" title="dex2jar(Get Java files from APK)"></a>dex2jar(Get Java files from APK)</h3><ol>
+<li>Rename the .apk file into .zip file (example SharedPr.apk into SharedPr.zip)(重命名后缀名.apk改为.zip).</li>
+<li>Extract SharedPr.zip file and copy classes.dex file from extracted folder.(解压改名后的zip文件，复制classes.dex)</li>
+<li>Extract dex2jar.zip and paste classes.dex into dex2jar folder. (把复制的classes.dex文件paste 到dex2jar文件夹下)</li>
+<li>Open command prompt and change directory to the dex2jar folder. Then write dex2jar classes.dex and press enter. Now you will get classes-dex2jar.jar file in the same folder.(打开terminal，移动到dex2jar文件夹下，执行<code>dex2jar classes.dex</code>，回车，得到classes-dex2jar.jar文件)</li>
+</ol>
+<h3 id="jdgui-打开dex2jar得到的jar文件"><a href="#jdgui-打开dex2jar得到的jar文件" class="headerlink" title="jdgui(打开dex2jar得到的jar文件)"></a>jdgui(打开dex2jar得到的jar文件)</h3><ol>
+<li>Now double click on jd-gui(Java decompiler) and click on open file. Then open classes-dex2jar.jar file from that folder(打开jdguid软件，打开文件选中classes-dex2jar.jar,可以看到java .class文件了)</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/04/14/markdown/" itemprop="url">
                   markdown
                 </a>
@@ -476,7 +687,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
